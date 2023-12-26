@@ -289,3 +289,5 @@ project/
 **/data/**
 
 *.bin
+*.mp3
+*.mp4
