@@ -42,14 +42,14 @@ llm = CTransformers(model="./llm/llama-2-7b-chat.ggmlv3.q2_K.bin", model_type="l
 # 5. 질의 응답
 print('5. 질의 응답')
 # https://js.langchain.com/docs/modules/chains/popular/vector_db_qa
+qa_chain = RetrievalQA.from_chain_type(llm, retriever=db.as_retriever())
+
 question = 'What is a transformer?'
 print(f'Q : {question}')
-qa_chain = RetrievalQA.from_chain_type(llm, retriever=db.as_retriever())
 result = qa_chain({'query': question})
 print(f"A : {result['result']}")
 
 question = 'What is a self-attention?'
 print(f'Q : {question}')
-qa_chain = RetrievalQA.from_chain_type(llm, retriever=db.as_retriever())
 result = qa_chain({'query': question})
 print(f"A : {result['result']}")

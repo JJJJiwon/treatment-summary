@@ -1,0 +1,6 @@
+langchain
+ctransformers
+pypdf
+sentence-transformers
+chromadb
+llama-cpp-python
